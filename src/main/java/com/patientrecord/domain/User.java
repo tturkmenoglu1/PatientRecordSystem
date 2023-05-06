@@ -2,9 +2,8 @@ package com.patientrecord.domain;
 
 import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,8 +11,10 @@ import java.util.Set;
 @Table(name = "t_user")
 public class User {
 
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     private String firstName;
 
@@ -27,5 +28,6 @@ public class User {
 
     private String phoneNumber;
 
+    @OneToMany
     private Set<Role> roles = new HashSet<>();
 }
