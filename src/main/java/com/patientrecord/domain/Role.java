@@ -1,10 +1,19 @@
 package com.patientrecord.domain;
 
 import com.patientrecord.domain.enums.RoleType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.mapstruct.EnumMapping;
 
 import javax.persistence.*;
 import java.util.HashSet;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
 @Table(name = "t_role")
