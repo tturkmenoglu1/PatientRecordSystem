@@ -1,5 +1,6 @@
 package com.patientrecord.security.service;
 
+import com.patientrecord.domain.User;
 import com.patientrecord.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +15,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserService userService;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+        User user = userService.getUserByEmail(email);
+        return UserDetailsImpl.build(user);
     }
 }
