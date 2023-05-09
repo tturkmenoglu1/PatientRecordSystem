@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,21 +22,30 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Column(length = 50, nullable = false)
     private String firstName;
 
+    @Column(length = 50, nullable = false)
     private String lastName;
 
+    @Column(length = 80, nullable = false, unique = true)
     private String email;
 
+    @Column(length = 100, nullable = false)
     private String password;
 
+    @Column(length = 200, nullable = false)
     private String address;
 
+    @Column(length = 30, nullable = false)
     private String city;
 
+    @Column(length = 14, nullable = false)
     private String phoneNumber;
 
-    @OneToMany
+    @ManyToMany   // hibernate defaultta LAZY
+    @JoinTable( name="t_user_role",
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> roles = new HashSet<>();
 }

@@ -22,7 +22,7 @@ public class UserService {
 
     public void saveUser(RegisterRequest registerRequest) {
         if (userRepository.existsByEmail(registerRequest.getEmail())){
-            throw new ConflictException(ErrorMessage.EMAIL_ALREADY_EXIST_MESSAGE, registerRequest.getEmail());
+            throw new ConflictException(String.format(ErrorMessage.EMAIL_ALREADY_EXIST_MESSAGE, registerRequest.getEmail()));
         }
     }
 }

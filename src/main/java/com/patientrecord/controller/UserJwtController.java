@@ -1,6 +1,8 @@
 package com.patientrecord.controller;
 
+import com.patientrecord.dto.request.LoginRequest;
 import com.patientrecord.dto.request.RegisterRequest;
+import com.patientrecord.dto.response.LoginResponse;
 import com.patientrecord.dto.response.PRResponse;
 import com.patientrecord.dto.response.ResponseMessage;
 import com.patientrecord.security.jwt.JwtUtils;
@@ -45,7 +47,7 @@ public class UserJwtController {
 
     // login
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> authenticate( @Valid @RequestBody LoginRequest loginRequest    )  {
+    public ResponseEntity<LoginResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest    )  {
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword());
