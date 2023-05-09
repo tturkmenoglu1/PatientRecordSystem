@@ -47,7 +47,7 @@ public class UserJwtController {
 
     // login
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest    )  {
+    public ResponseEntity<LoginResponse> authenticate(@Valid @RequestBody LoginRequest loginRequest)  {
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword());

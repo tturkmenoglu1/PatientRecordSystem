@@ -8,4 +8,7 @@ public class ErrorMessage {
 
     public final static String EMAIL_ALREADY_EXIST_MESSAGE = "Email: %s already exist";
 
+
+    public final static String ROLE_NOT_FOUND_MESSAGE = "The role you looking for does not exist: %s";
+
 }
