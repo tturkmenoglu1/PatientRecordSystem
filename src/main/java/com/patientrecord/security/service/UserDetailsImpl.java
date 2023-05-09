@@ -26,24 +26,27 @@ public class UserDetailsImpl implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     public static UserDetailsImpl build(User user){
-        List<SimpleGrantedAuthority> authorities = user.getRoles().stream().map(role->new SimpleGrantedAuthority(role.getType().name())).collect(Collectors.toList());
+        List<SimpleGrantedAuthority> authorities = user.getRoles().
+                                                        stream().
+                                                        map(role->new SimpleGrantedAuthority(role.getType().name())).
+                                                        collect(Collectors.toList());
 
         return new UserDetailsImpl(user.getEmail(), user.getPassword(), authorities);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.getEmail();
     }
 
     @Override
