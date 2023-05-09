@@ -1,0 +1,132 @@
+2023-05-09 00:23:43,460 INFO  [restartedMain]  com.patientrecord.HastaKayitApplication:Starting HastaKayitApplication using Java 11.0.16 on Ski with PID 10024 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 00:23:43,462 INFO  [restartedMain]  com.patientrecord.HastaKayitApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 00:23:43,507 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 00:23:43,507 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 00:23:44,245 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 00:23:44,255 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 00:23:44,272 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2023-05-09 00:34:38,851 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Starting PatientRecordApplication using Java 11.0.16 on Ski with PID 21084 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 00:34:38,852 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 00:34:38,892 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 00:34:38,893 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 00:34:39,408 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 00:34:39,417 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 00:34:39,431 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2023-05-09 17:11:45,050 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Starting PatientRecordApplication using Java 11.0.16 on Ski with PID 26580 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 17:11:45,051 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 17:11:45,089 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 17:11:45,089 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 17:11:45,720 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 17:11:45,729 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 17:11:45,746 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2023-05-09 17:14:57,181 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Starting PatientRecordApplication using Java 11.0.16 on Ski with PID 26476 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 17:14:57,182 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 17:14:57,216 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 17:14:57,216 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 17:14:57,700 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 17:14:57,709 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 17:14:57,722 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2023-05-09 17:15:54,444 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Starting PatientRecordApplication using Java 11.0.16 on Ski with PID 12996 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 17:15:54,445 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 17:15:54,482 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 17:15:54,482 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 17:15:54,961 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 17:15:54,969 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 17:15:54,983 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2023-05-09 17:16:01,807 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Starting PatientRecordApplication using Java 11.0.16 on Ski with PID 32396 (C:\Inellij IDEA Projects\hasta-kayit\target\classes started by tturkmenoglu in C:\Inellij IDEA Projects\hasta-kayit)
+2023-05-09 17:16:01,808 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:No active profile set, falling back to 1 default profile: "default"
+2023-05-09 17:16:01,844 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-09 17:16:01,844 INFO  [restartedMain]  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-09 17:16:02,313 WARN  [restartedMain]  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'authTokenFilter' defined in class path resource [com/patientrecord/security/SecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=securityConfig; factoryMethodName=authTokenFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/patientrecord/security/SecurityConfig.class]] for bean 'authTokenFilter': There is already [Generic bean: class [com.patientrecord.security.jwt.AuthTokenFilter]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class]] bound.
+2023-05-09 17:16:02,322 INFO  [restartedMain]  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener:
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-05-09 17:16:02,334 ERROR [restartedMain]  org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'authTokenFilter', defined in class path resource [com/patientrecord/security/SecurityConfig.class], could not be registered. A bean with that name has already been defined in file [C:\Inellij IDEA Projects\hasta-kayit\target\classes\com\patientrecord\security\jwt\AuthTokenFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
