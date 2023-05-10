@@ -589,3 +589,6 @@ Consider defining a bean of type 'com.patientrecord.repository.RoleRepository' i
 2023-05-09 19:55:45,762 INFO  [restartedMain]  com.patientrecord.PatientRecordApplication:Started PatientRecordApplication in 3.474 seconds (JVM running for 4.144)
 2023-05-09 19:55:46,117 INFO  [RMI TCP Connection(2)-192.168.1.7]  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-05-09 19:55:59,370 INFO  [http-nio-8080-exec-3]  org.springdoc.api.AbstractOpenApiResource:Init duration for springdoc-openapi is: 113 ms
+2023-05-09 20:59:21,077 INFO  [SpringApplicationShutdownHook]  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-09 20:59:21,090 INFO  [SpringApplicationShutdownHook]  com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2023-05-09 20:59:21,094 INFO  [SpringApplicationShutdownHook]  com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
