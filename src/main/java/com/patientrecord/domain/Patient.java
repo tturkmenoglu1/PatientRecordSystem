@@ -34,4 +34,5 @@ public class Patient {
 
     private String medicine;
 
+    private String deneme;
 }
