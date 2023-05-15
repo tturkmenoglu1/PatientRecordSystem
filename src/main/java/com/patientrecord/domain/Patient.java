@@ -32,7 +32,20 @@ public class Patient {
 
     private String gender;
 
+    private String email;
+
+    private String phoneNumber;
+
+    private String address;
+
+    private String complain;
+
+    private String story;
+
+    private String treat;
+
     private String medicine;
 
-    private String deneme;
+    private String advice;
+
 }
