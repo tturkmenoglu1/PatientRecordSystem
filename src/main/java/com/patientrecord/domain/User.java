@@ -43,6 +43,9 @@ public class User {
     @Column(length = 14, nullable = false)
     private String phoneNumber;
 
+    @Column(nullable = false)
+    private Boolean builtIn = false;
+
     @ManyToMany   // hibernate defaultta LAZY
     @JoinTable( name="t_user_role",
             joinColumns = @JoinColumn(name="user_id"),
