@@ -34,10 +34,10 @@ public class Patient {
     private String lastName;
 
     @Column
-    private LocalDateTime birthPlace;
+    private LocalDateTime birthDate;
 
     @Column(length = 30)
-    private String birthDate;
+    private String birthPlace;
 
     @Enumerated(EnumType.STRING)
     @Column
