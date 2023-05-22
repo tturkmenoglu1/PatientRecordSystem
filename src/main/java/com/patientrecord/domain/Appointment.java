@@ -16,6 +16,5 @@ public class Appointment {
 
     private LocalDateTime appointmentDate;
 
-
     private String about;
 }
