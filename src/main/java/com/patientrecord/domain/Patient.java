@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -67,4 +68,8 @@ public class Patient {
     @Column(length = 500)
     private String advice;
 
+
+    @OneToMany(orphanRemoval = true)
+    @JoinColumn(name = "patient_id")
+    private Set<ImageFile> image;
 }
