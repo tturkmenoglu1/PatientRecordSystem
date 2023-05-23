@@ -59,15 +59,12 @@ public class PatientDTO {
     @NotBlank(message = "Plesase provide treat")
     private String treat;
 
-    @Column(length = 300)
+    @Size(max=300,message="Size is exceeded")
     private String medicine;
 
-    @Column(length = 500)
+    @Size(max=500,message="Size is exceeded")
     private String advice;
 
-
-    @OneToMany(orphanRemoval = true)
-    @JoinColumn(name = "patient_id")
     private Set<ImageFile> image;
 
 }
