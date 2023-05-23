@@ -1,5 +1,6 @@
-package com.patientrecord.domain;
+package com.patientrecord.dto;
 
+import com.patientrecord.domain.ImageFile;
 import com.patientrecord.domain.enums.Gender;
 import com.patientrecord.domain.enums.GroupName;
 import lombok.AllArgsConstructor;
@@ -8,9 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -18,50 +19,44 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Entity
-@Table(name = "t_patient")
-public class Patient {
+public class PatientDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Enumerated(EnumType.STRING)
-    @Column
     private GroupName groupName;
 
-    @Column(length = 30, nullable = false)
+    @Size(max=30,message="Size is exceeded")
+    @NotBlank(message = "Please provide first name")
     private String firstName;
 
-    @Column(length = 30)
+    @Size(max=30,message="Size is exceeded")
+    @NotBlank(message = "Please provide last name")
     private String lastName;
 
-    @Column
+
     private LocalDateTime birthDate;
 
-    @Column(length = 30)
+    @Size(max=30,message="Size is exceeded")
     private String birthPlace;
 
-    @Enumerated(EnumType.STRING)
-    @Column
     private Gender gender;
 
-    @Column(length = 100, unique = true)
+
+    @Size(max=100,message="Size is exceeded")
     private String email;
 
-    @Column(length = 15, nullable = false)
+    @Size(max=15,message="Size is exceeded")
     private String phoneNumber;
 
-    @Column(length = 100)
+    @Size(max=100,message="Size is exceeded")
     private String address;
 
-    @Column(length = 500)
+    @Size(max=500,message="Size is exceeded")
     private String complain;
 
-    @Column(length = 3500)
+    @Size(max=3500,message="Size is exceeded")
     private String story;
 
-    @Column(length = 100, nullable = false)
+    @Size(max=100,message="Size is exceeded")
+    @NotBlank(message = "Plesase provide treat")
     private String treat;
 
     @Column(length = 300)

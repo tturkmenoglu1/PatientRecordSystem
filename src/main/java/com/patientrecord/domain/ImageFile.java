@@ -20,7 +20,7 @@ public class ImageFile {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private Long id;
+    private String id;
 
     private String name;
 
