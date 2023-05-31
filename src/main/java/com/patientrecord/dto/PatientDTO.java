@@ -65,6 +65,6 @@ public class PatientDTO {
     @Size(max=500,message="Size is exceeded")
     private String advice;
 
-    private Set<ImageFile> image;
+//    private Set<String> image;
 
 }

@@ -71,8 +71,8 @@ public class Patient {
     private String advice;
 
 
-    @OneToMany(orphanRemoval = true)
-    @JoinColumn(name = "patient_id")
-    private Set<ImageFile> image;
+//    @OneToMany(orphanRemoval = true)
+//    @JoinColumn(name = "patient_id")
+//    private Set<ImageFile> image;
 
 }

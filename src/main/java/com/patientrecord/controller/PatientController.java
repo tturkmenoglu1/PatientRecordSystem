@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/patient")
@@ -21,14 +22,24 @@ public class PatientController {
 
     @PostMapping("/admin/{imageId}/add")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse> savePatient(@PathVariable String imageId, @Valid @RequestBody PatientDTO patientDTO){
+    public ResponseEntity<PRResponse> savePatient(@Valid @RequestBody PatientDTO patientDTO){
 
-        patientService.savePatient(imageId, patientDTO);
+        patientService.savePatient(patientDTO);
 
         PRResponse response = new PRResponse(ResponseMessage.PATIENT_RECORD_SUCCESS_MESSAGE, true);
 
-
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
+
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<PatientDTO>> getAllPatients(){
+
+        List<PatientDTO> allPatients = patientService.getAllPatients();
+
+        return ResponseEntity.ok(allPatients);
+    }
+
+
 
 }
