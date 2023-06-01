@@ -20,6 +20,8 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
+    //******************** CREATE PATIENT **********************
+
     @PostMapping("/admin/{imageId}/add")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PRResponse> savePatient(@Valid @RequestBody PatientDTO patientDTO){
@@ -31,6 +33,8 @@ public class PatientController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    //******************** GET ALL PATIENT AS LIST **********************
+
     @GetMapping("/all")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<PatientDTO>> getAllPatients(){
@@ -40,6 +44,27 @@ public class PatientController {
         return ResponseEntity.ok(allPatients);
     }
 
+    //******************** UPDATE PATIENT **********************
 
+    @PutMapping("/admin/auth")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<PRResponse> updatePatient(@RequestParam("id") Long id, @Valid @RequestBody PatientDTO patientDTO){
 
+        patientService.updatePatient(id,patientDTO);
+
+        PRResponse response = new PRResponse(ResponseMessage.PATIENT_UPDATE_SUCCESS_MESSAGE, true);
+
+        return ResponseEntity.ok(response);
+    }
+
+    //******************** DELETE **********************
+    @DeleteMapping("/admin/{id}/auth")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<PRResponse> deletePatient(@RequestParam Long id){
+        patientService.removeByID(id);
+
+        PRResponse response = new PRResponse(ResponseMessage.PATIENT_DELETE_SUCCESS_MESSAGE, true);
+
+        return ResponseEntity.ok(response);
+    }
 }

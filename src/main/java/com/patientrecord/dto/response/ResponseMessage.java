@@ -9,6 +9,9 @@ public class ResponseMessage {
 
 
     public final static String PATIENT_RECORD_SUCCESS_MESSAGE = "Patient recording successfully done";
+    public final static String PATIENT_UPDATE_SUCCESS_MESSAGE = "Patient update successfully done";
+    public final static String PATIENT_DELETE_SUCCESS_MESSAGE = "Patient successfully deleted";
+
 
 
 
