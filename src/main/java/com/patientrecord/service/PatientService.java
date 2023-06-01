@@ -42,7 +42,7 @@ public class PatientService {
 
     }
 
-    private Patient getPatient(Long id) {
+    private Patient getPatientById(Long id) {
         return patientRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(String.format(ErrorMessage.PATIENT_NOT_FOUND_MESSAGE, id)));
     }
 
@@ -53,7 +53,7 @@ public class PatientService {
     }
 
     public void updatePatient(Long id, PatientDTO patientDTO) {
-        Patient patient = getPatient(id);
+        Patient patient = getPatientById(id);
 
         patient.setGroupName(patientDTO.getGroupName());
         patient.setFirstName(patientDTO.getFirstName());
@@ -76,9 +76,16 @@ public class PatientService {
 
 
     public void removeByID(Long id) {
-        Patient patient = getPatient(id);
+        Patient patient = getPatientById(id);
 
         //TODO: rezervasyon olma durumunu kontrol et
 
+        patientRepository.delete(patient);
+    }
+
+    public PatientDTO findById(Long id) {
+        Patient patient = getPatientById(id);
+
+        return patientMapper.patientToPatientDTO(patient);
     }
 }

@@ -44,6 +44,18 @@ public class PatientController {
         return ResponseEntity.ok(allPatients);
     }
 
+    //******************** GET PATIENT **********************
+
+    @GetMapping("/{id}")
+    @PreAuthorize(("hasRole('ADMIN')"))
+    public ResponseEntity<PatientDTO> getPatientById(@RequestParam Long id){
+
+        PatientDTO patientDTO = patientService.findById(id);
+
+        return ResponseEntity.ok(patientDTO);
+    }
+
+
     //******************** UPDATE PATIENT **********************
 
     @PutMapping("/admin/auth")
