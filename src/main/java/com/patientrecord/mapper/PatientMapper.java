@@ -20,7 +20,6 @@ public interface PatientMapper {
     @Mapping(target = "id", ignore = true)
     Patient patientDTOToPatient(PatientDTO patientDTO);
 
-    @Mapping(target = "id", ignore = true)
     PatientDTO patientToPatientDTO(Patient patient);
 
 //    @Mapping(source="image", target="id", qualifiedByName = "getImageAsString")
