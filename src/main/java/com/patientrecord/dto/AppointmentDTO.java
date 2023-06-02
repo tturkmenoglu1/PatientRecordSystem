@@ -1,11 +1,12 @@
-package com.patientrecord.domain;
+package com.patientrecord.dto;
 
+
+import com.patientrecord.domain.Patient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -13,19 +14,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Entity
-@Table(name = "t_appointment")
-public class Appointment {
+public class AppointmentDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patient patient;
 
     private LocalDateTime appointmentDate;
 
     private String about;
+
 }
