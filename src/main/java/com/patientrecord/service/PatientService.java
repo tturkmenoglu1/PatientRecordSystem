@@ -42,7 +42,7 @@ public class PatientService {
 
     }
 
-    private Patient getPatientById(Long id) {
+    public Patient getPatientById(Long id) {
         return patientRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(String.format(ErrorMessage.PATIENT_NOT_FOUND_MESSAGE, id)));
     }
 

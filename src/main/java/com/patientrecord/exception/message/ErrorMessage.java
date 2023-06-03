@@ -19,6 +19,10 @@ public class ErrorMessage {
 
 
 
+    public final static String APPOINTMENT_NOT_FOUND_MESSAGE = "Appointment with %d not found";
+
+
+
     public final static String ROLE_NOT_FOUND_MESSAGE = "The role you looking for does not exist: %s";
 
 }
