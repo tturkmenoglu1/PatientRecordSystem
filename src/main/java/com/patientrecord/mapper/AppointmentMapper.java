@@ -5,9 +5,13 @@ import com.patientrecord.dto.AppointmentDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface AppointmentMapper {
 
-    @Mapping(target = "id", ignore = true)
+
     AppointmentDTO appointmentToAppointmentDTO(Appointment appointment);
+
+    List<AppointmentDTO> map(List<Appointment> appointments);
 }

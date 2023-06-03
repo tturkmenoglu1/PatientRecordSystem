@@ -13,6 +13,8 @@ import com.patientrecord.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AppointmentService {
 
@@ -39,5 +41,10 @@ public class AppointmentService {
     public AppointmentDTO findAppointmentById(Long id) {
         Appointment appointment = appointmentRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(String.format(ErrorMessage.APPOINTMENT_NOT_FOUND_MESSAGE, id)));
         return appointmentMapper.appointmentToAppointmentDTO(appointment);
+    }
+
+    public List<AppointmentDTO> getAllAppointments() {
+        List<Appointment> appointments = appointmentRepository.findAll();
+        return appointmentMapper.map(appointments);
     }
 }

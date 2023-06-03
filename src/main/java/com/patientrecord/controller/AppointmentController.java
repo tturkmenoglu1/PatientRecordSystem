@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/appointment")
@@ -34,13 +35,25 @@ public class AppointmentController {
         return ResponseEntity.ok(response);
     }
 
-    //******************** GET ALL PATIENT AS LIST **********************
+    //******************** GET APPOINTMENT **********************
+
+
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<AppointmentDTO> getAppointmentById(@PathVariable Long id{
+    public ResponseEntity<AppointmentDTO> getAppointmentById(@PathVariable Long id){
         AppointmentDTO appointmentDTO = appointmentService.findAppointmentById(id);
         return ResponseEntity.ok(appointmentDTO);
-    })
+    }
+
+    //******************** GET ALL PATIENT AS LIST **********************
+
+
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<AppointmentDTO>> getAllAppointments(){
+        List<AppointmentDTO> list = appointmentService.getAllAppointments();
+        return ResponseEntity.ok(list);
+    }
 
 
 }
