@@ -11,6 +11,9 @@ public class ResponseMessage {
     public final static String APPOINTMENT_SAVED_RESPONSE_MESSAGE = "Appointment successfully saved";
 
 
+    public final static String TRANSACTION_SAVED_RESPONSE_MESSAGE = "Transaction successfully saved";
+
+
 
     public final static String PATIENT_RECORD_SUCCESS_MESSAGE = "Patient recording successfully done";
     public final static String PATIENT_UPDATE_SUCCESS_MESSAGE = "Patient update successfully done";
