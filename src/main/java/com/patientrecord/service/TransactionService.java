@@ -36,9 +36,14 @@ public class TransactionService {
         transactionRepository.save(transaction);
     }
 
+
     public TransactionDTO getTransaction(Long id) {
-        Transaction transaction = transactionRepository.findById(id).orElseThrow(()-> new
-                                ResourceNotFoundException(String.format(ErrorMessage.TRANSACTION_NOT_FOUND_MESSAGE,id)));
+        Transaction transaction = findTransactionById(id);
         return transactionMapper.transactionToTransactionDTO(transaction);
+    }
+
+    public Transaction findTransactionById(Long id){
+        return transactionRepository.findById(id).orElseThrow(()-> new
+                ResourceNotFoundException(String.format(ErrorMessage.TRANSACTION_NOT_FOUND_MESSAGE,id)));
     }
 }

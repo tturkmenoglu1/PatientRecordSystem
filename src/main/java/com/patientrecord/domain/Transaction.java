@@ -1,5 +1,6 @@
 package com.patientrecord.domain;
 
+import com.patientrecord.domain.enums.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,13 +27,16 @@ public class Transaction {
     private Patient patient;
 
     @Column
+    private Payment payment;
+
+    @Column
     private Integer receivable;
 
     @Column
     private Integer debt;
 
     @Column
-    private Integer balance;
+    private String description;
 
     @Column
     private LocalDateTime createAt = LocalDateTime.now();
