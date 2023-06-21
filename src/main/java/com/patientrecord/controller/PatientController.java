@@ -70,6 +70,7 @@ public class PatientController {
     }
 
     //******************** DELETE **********************
+
     @DeleteMapping("/admin/{id}/auth")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PRResponse> deletePatient(@RequestParam Long id){

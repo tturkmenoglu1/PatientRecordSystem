@@ -26,6 +26,7 @@ public class Transaction {
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patient patient;
 
+    @Enumerated(EnumType.STRING)
     @Column
     private Payment payment;
 

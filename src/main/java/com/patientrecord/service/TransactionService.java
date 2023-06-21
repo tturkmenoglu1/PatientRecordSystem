@@ -30,7 +30,8 @@ public class TransactionService {
 
         transaction.setPatient(patient);
         transaction.setDebt(transactionRequest.getDebt());
-        transaction.setBalance(transactionRequest.getBalance());
+        transaction.setDescription(transactionRequest.getDescription());
+        transaction.setPayment(transactionRequest.getPayment());
         transaction.setReceivable(transactionRequest.getReceivable());
 
         transactionRepository.save(transaction);

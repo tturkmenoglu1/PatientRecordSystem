@@ -1,5 +1,6 @@
 package com.patientrecord.dto.request;
 
+import com.patientrecord.domain.enums.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,12 @@ public class TransactionRequest {
 
     private Long patientId;
 
+    private Payment payment;
+
     private Integer receivable;
 
     private Integer debt;
 
-    private Integer balance;
+    private String description;
 
 }
