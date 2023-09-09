@@ -1,7 +1,8 @@
 package com.patientrecord.dto;
 
-import com.patientrecord.domain.ImageFile;
-import com.patientrecord.domain.enums.Gender;
+
+import com.patientrecord.domain.Gender;
+import com.patientrecord.domain.Nationality;
 import com.patientrecord.domain.enums.GroupName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +22,7 @@ import java.util.Set;
 
 public class PatientDTO {
 
-    private GroupName groupName;
+    private Nationality nationality;
 
     @Size(max=30,message="Size is exceeded")
     @NotBlank(message = "Please provide first name")
@@ -39,7 +40,6 @@ public class PatientDTO {
 
     private Gender gender;
 
-
     @Size(max=100,message="Size is exceeded")
     private String email;
 
@@ -55,11 +55,10 @@ public class PatientDTO {
     @Size(max=3500,message="Size is exceeded")
     private String story;
 
-    @Size(max=100,message="Size is exceeded")
-    @NotBlank(message = "Plesase provide treat")
+    @Size(max=300,message="Size is exceeded")
     private String treat;
 
-    @Size(max=300,message="Size is exceeded")
+    @Size(max=100,message="Size is exceeded")
     private String medicine;
 
     @Size(max=500,message="Size is exceeded")

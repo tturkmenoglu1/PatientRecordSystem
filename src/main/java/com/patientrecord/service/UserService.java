@@ -3,12 +3,15 @@ package com.patientrecord.service;
 import com.patientrecord.domain.Role;
 import com.patientrecord.domain.User;
 import com.patientrecord.domain.enums.RoleType;
+import com.patientrecord.dto.UserDTO;
 import com.patientrecord.dto.request.RegisterRequest;
 import com.patientrecord.exception.ConflictException;
 import com.patientrecord.exception.ResourceNotFoundException;
 import com.patientrecord.exception.message.ErrorMessage;
+import com.patientrecord.mapper.UserMapper;
 import com.patientrecord.repository.UserRepository;
 
+import com.patientrecord.security.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +29,8 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     private RoleService roleService;
+
+    private UserMapper userMapper;
 
     @Autowired
     public UserService(UserRepository userRepository, @Lazy PasswordEncoder passwordEncoder, RoleService roleService) {
@@ -65,5 +70,17 @@ public class UserService {
 
         userRepository.save(user);
 
+    }
+
+    public User getCurrentUser() {
+        String email = SecurityUtils.getCurrentUserLogin().orElseThrow(()->
+                new ResourceNotFoundException(ErrorMessage.PRINCIPAL_FOUND_MESSAGE));
+        return getUserByEmail(email);
+
+    }
+
+    public UserDTO getPrincipal() {
+        User user=getCurrentUser();
+        return userMapper.userToUserDTO(user);
     }
 }

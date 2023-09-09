@@ -1,7 +1,5 @@
 package com.patientrecord.domain;
 
-import com.patientrecord.domain.enums.Gender;
-import com.patientrecord.domain.enums.GroupName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,9 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -26,9 +21,9 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column
-    private GroupName groupName;
+    @ManyToOne
+    @JoinColumn(name = "nationality_id")
+    private Nationality nationality;
 
     @Column(length = 30, nullable = false)
     private String firstName;
@@ -42,8 +37,8 @@ public class Patient {
     @Column(length = 30)
     private String birthPlace;
 
-    @Enumerated(EnumType.STRING)
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "gender_id")
     private Gender gender;
 
     @Column(length = 100, unique = true)
@@ -69,6 +64,8 @@ public class Patient {
 
     @Column(length = 500)
     private String advice;
+
+
 
 
 //    @OneToMany(orphanRemoval = true)

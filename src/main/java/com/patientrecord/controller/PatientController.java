@@ -1,6 +1,7 @@
 package com.patientrecord.controller;
 
 import com.patientrecord.dto.PatientDTO;
+import com.patientrecord.dto.request.PatienceRequest;
 import com.patientrecord.dto.response.PRResponse;
 import com.patientrecord.dto.response.ResponseMessage;
 import com.patientrecord.service.PatientService;
@@ -22,11 +23,11 @@ public class PatientController {
 
     //******************** CREATE PATIENT **********************
 
-    @PostMapping("/admin/{imageId}/add")
+    @PostMapping("/admin/add")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse> savePatient(@Valid @RequestBody PatientDTO patientDTO){
+    public ResponseEntity<PRResponse> savePatient(@Valid @RequestBody PatienceRequest patienceRequest){
 
-        patientService.savePatient(patientDTO);
+        patientService.savePatient(patienceRequest);
 
         PRResponse response = new PRResponse(ResponseMessage.PATIENT_RECORD_SUCCESS_MESSAGE, true);
 

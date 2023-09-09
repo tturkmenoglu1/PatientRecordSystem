@@ -25,6 +25,8 @@ public class ErrorMessage {
     public final static String TRANSACTION_NOT_FOUND_MESSAGE = "Transaction with %d not found";
 
 
+    public final static String PRINCIPAL_FOUND_MESSAGE= "User not found";
+
 
 
     public final static String ROLE_NOT_FOUND_MESSAGE = "The role you looking for does not exist: %s";

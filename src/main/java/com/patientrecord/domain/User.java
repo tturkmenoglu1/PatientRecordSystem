@@ -45,6 +45,10 @@ public class User {
     @Column(length = 14, nullable = false)
     private String phoneNumber;
 
+    @ManyToOne
+    @JoinColumn(name = "gender_id")
+    private Gender gender;
+
     @Column(nullable = false)
     private Boolean builtIn = false;
 
