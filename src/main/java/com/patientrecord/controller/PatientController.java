@@ -6,6 +6,10 @@ import com.patientrecord.dto.response.PRResponse;
 import com.patientrecord.dto.response.ResponseMessage;
 import com.patientrecord.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -80,5 +84,20 @@ public class PatientController {
         PRResponse response = new PRResponse(ResponseMessage.PATIENT_DELETE_SUCCESS_MESSAGE, true);
 
         return ResponseEntity.ok(response);
+    }
+
+
+    //**********************PAGING************************
+
+
+    @GetMapping("/all/page")
+    public ResponseEntity<Page<PatientDTO>> getAllPatientsAsPage(@RequestParam(value = "q",required = false)String query,
+                                                                 @RequestParam("page") int page,
+                                                                 @RequestParam("size") int size,
+                                                                 @RequestParam("sort") String prop,
+                                                                 @RequestParam(value = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
+        Pageable pageable = PageRequest.of(page,size,Sort.by(direction,prop));
+        Page<PatientDTO> pageDTO = patientService.findAllWitnPage(query,pageable);
+        return ResponseEntity.ok(pageDTO);
     }
 }
