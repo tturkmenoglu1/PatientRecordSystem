@@ -22,6 +22,8 @@ import java.util.Set;
 
 public class PatientDTO {
 
+    private Long id;
+
     private Nationality nationality;
 
     @Size(max=30,message="Size is exceeded")

@@ -1,6 +1,7 @@
 package com.patientrecord.dto.request;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.patientrecord.domain.Patient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,6 +19,7 @@ public class AppointmentRequest {
 
     private Long patientId;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime appointmentDate;
 
     private String about;

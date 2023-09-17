@@ -65,9 +65,9 @@ public class PatientController {
 
     @PutMapping("/admin/auth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse> updatePatient(@RequestParam("id") Long id, @Valid @RequestBody PatientDTO patientDTO){
+    public ResponseEntity<PRResponse> updatePatient(@RequestParam("id") Long id, @Valid @RequestBody PatienceRequest patienceRequest){
 
-        patientService.updatePatient(id,patientDTO);
+        patientService.updatePatient(id,patienceRequest);
 
         PRResponse response = new PRResponse(ResponseMessage.PATIENT_UPDATE_SUCCESS_MESSAGE, true);
 
@@ -92,12 +92,15 @@ public class PatientController {
 
     @GetMapping("/all/page")
     public ResponseEntity<Page<PatientDTO>> getAllPatientsAsPage(@RequestParam(value = "q",required = false)String query,
+                                                                 @RequestParam(value = "firstName",required = false)String firstName,
+                                                                 @RequestParam(value = "lastName",required = false)String lastName,
+                                                                 @RequestParam(value = "phoneNumber",required = false)String phoneNumber,
                                                                  @RequestParam("page") int page,
                                                                  @RequestParam("size") int size,
                                                                  @RequestParam("sort") String prop,
                                                                  @RequestParam(value = "direction", required = false, defaultValue = "DESC") Sort.Direction direction) {
         Pageable pageable = PageRequest.of(page,size,Sort.by(direction,prop));
-        Page<PatientDTO> pageDTO = patientService.findAllWitnPage(query,pageable);
+        Page<PatientDTO> pageDTO = patientService.findAllWitnPage(query,firstName,lastName,phoneNumber,pageable);
         return ResponseEntity.ok(pageDTO);
     }
 }

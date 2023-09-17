@@ -86,25 +86,25 @@ public class PatientService {
         return patientMapper.map(patients);
     }
 
-    public void updatePatient(Long id, PatientDTO patientDTO) {
+    public void updatePatient(Long id, PatienceRequest patienceRequest) {
         Patient patient = getPatientById(id);
-        Nationality nationality = nationalityService.findNationById(patientDTO.getNationality().getId());
-        Gender gender = genderService.findGenderById(patientDTO.getGender().getId());
+        Nationality nationality = nationalityService.findNationById(patienceRequest.getNationalityId());
+        Gender gender = genderService.findGenderById(patienceRequest.getGenderId());
 
         patient.setNationality(nationality);
-        patient.setFirstName(patientDTO.getFirstName());
-        patient.setLastName(patientDTO.getLastName());
-        patient.setBirthDate(patientDTO.getBirthDate());
-        patient.setBirthPlace(patientDTO.getBirthPlace());
+        patient.setFirstName(patienceRequest.getFirstName());
+        patient.setLastName(patienceRequest.getLastName());
+        patient.setBirthDate(patienceRequest.getBirthDate());
+        patient.setBirthPlace(patienceRequest.getBirthPlace());
         patient.setGender(gender);
-        patient.setEmail(patientDTO.getEmail());
-        patient.setPhoneNumber(patientDTO.getPhoneNumber());
-        patient.setAddress(patientDTO.getAddress());
-        patient.setComplain(patientDTO.getComplain());
-        patient.setStory(patientDTO.getStory());
-        patient.setTreat(patientDTO.getTreat());
-        patient.setMedicine(patientDTO.getMedicine());
-        patient.setAdvice(patientDTO.getAdvice());
+        patient.setEmail(patienceRequest.getEmail());
+        patient.setPhoneNumber(patienceRequest.getPhoneNumber());
+        patient.setAddress(patienceRequest.getAddress());
+        patient.setComplain(patienceRequest.getComplain());
+        patient.setStory(patienceRequest.getStory());
+        patient.setTreat(patienceRequest.getTreat());
+        patient.setMedicine(patienceRequest.getMedicine());
+        patient.setAdvice(patienceRequest.getAdvice());
 
         patientRepository.save(patient);
 
@@ -125,7 +125,7 @@ public class PatientService {
         return patientMapper.patientToPatientDTO(patient);
     }
 
-    public Page<PatientDTO> findAllWitnPage(String query, Pageable pageable) {
+    public Page<PatientDTO> findAllWitnPage(String query, String firstName, String lastName, String phoneNumber, Pageable pageable) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Patient> criteriaQuery = cb.createQuery(Patient.class);
         Root<Patient> root =criteriaQuery.from(Patient.class);
@@ -133,10 +133,22 @@ public class PatientService {
         List<Predicate> predicates = new ArrayList<>();
         Predicate finalPredicate = null;
 
-        if (query != null && !query.isEmpty()){
-            String likeSearchText = "%" + query.toLowerCase(Locale.US)+ "%";
+        if (firstName != null && !firstName.isEmpty()){
+            String likeSearchText = "%" + firstName.toLowerCase(Locale.US)+ "%";
             System.err.println(likeSearchText);
             predicates.add(cb.like(cb.lower(root.get("firstName")), likeSearchText));
+        }
+
+        if (lastName != null && !lastName.isEmpty()){
+            String likeSearchText = "%" + lastName.toLowerCase(Locale.US)+ "%";
+            System.err.println(likeSearchText);
+            predicates.add(cb.like(cb.lower(root.get("lastName")), likeSearchText));
+        }
+
+        if (phoneNumber != null && !phoneNumber.isEmpty()){
+            String likeSearchText = "%" + phoneNumber.toLowerCase(Locale.US)+ "%";
+            System.err.println(likeSearchText);
+            predicates.add(cb.like(cb.lower(root.get("phoneNumber")), likeSearchText));
         }
 
         finalPredicate = cb.and(predicates.toArray(new Predicate[0]));
