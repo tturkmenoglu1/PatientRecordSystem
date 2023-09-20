@@ -11,9 +11,12 @@ import com.patientrecord.exception.message.ErrorMessage;
 import com.patientrecord.mapper.AppointmentMapper;
 import com.patientrecord.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.function.Function;
 
 @Service
 public class AppointmentService {
@@ -46,5 +49,10 @@ public class AppointmentService {
     public List<AppointmentDTO> getAllAppointments() {
         List<Appointment> appointments = appointmentRepository.findAll();
         return appointmentMapper.map(appointments);
+    }
+
+    public Page<AppointmentDTO> findAllWitnPage(Pageable pageable) {
+        Page<Appointment> appointmentPage = appointmentRepository.findAll(pageable);
+        return appointmentPage.map(appointmentMapper::appointmentToAppointmentDTO);
     }
 }
