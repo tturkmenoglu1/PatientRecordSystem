@@ -2,7 +2,6 @@ package com.patientrecord.dto.request;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.patientrecord.domain.Patient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

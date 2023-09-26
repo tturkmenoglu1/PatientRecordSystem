@@ -1,7 +1,5 @@
 package com.patientrecord.dto.request;
 
-import com.patientrecord.domain.Gender;
-import com.patientrecord.domain.Nationality;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +7,8 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatienceRequest {
@@ -28,7 +24,7 @@ public class PatienceRequest {
         private String lastName;
 
 
-        private LocalDateTime birthDate;
+        private LocalDate birthDate;
 
         @Size(max=30,message="Size is exceeded")
         private String birthPlace;
@@ -61,4 +57,116 @@ public class PatienceRequest {
 
 //    private Set<String> image;
 
+
+        public Long getNationalityId() {
+                return nationalityId;
+        }
+
+        public void setNationalityId(Long nationalityId) {
+                this.nationalityId = nationalityId;
+        }
+
+        public String getFirstName() {
+                return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+                this.firstName = firstName;
+        }
+
+        public String getLastName() {
+                return lastName;
+        }
+
+        public void setLastName(String lastName) {
+                this.lastName = lastName;
+        }
+
+        public LocalDate getBirthDate() {
+                return birthDate;
+        }
+
+        public void setBirthDate(LocalDate birthDate) {
+                this.birthDate = birthDate;
+        }
+
+        public String getBirthPlace() {
+                return birthPlace;
+        }
+
+        public void setBirthPlace(String birthPlace) {
+                this.birthPlace = birthPlace;
+        }
+
+        public Long getGenderId() {
+                return genderId;
+        }
+
+        public void setGenderId(Long genderId) {
+                this.genderId = genderId;
+        }
+
+        public String getEmail() {
+                return email;
+        }
+
+        public void setEmail(String email) {
+                this.email = email;
+        }
+
+        public String getPhoneNumber() {
+                return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+                this.phoneNumber = phoneNumber;
+        }
+
+        public String getAddress() {
+                return address;
+        }
+
+        public void setAddress(String address) {
+                this.address = address;
+        }
+
+        public String getComplain() {
+                return complain;
+        }
+
+        public void setComplain(String complain) {
+                this.complain = complain;
+        }
+
+        public String getStory() {
+                return story;
+        }
+
+        public void setStory(String story) {
+                this.story = story;
+        }
+
+        public String getTreat() {
+                return treat;
+        }
+
+        public void setTreat(String treat) {
+                this.treat = treat;
+        }
+
+        public String getMedicine() {
+                return medicine;
+        }
+
+        public void setMedicine(String medicine) {
+                this.medicine = medicine;
+        }
+
+        public String getAdvice() {
+                return advice;
+        }
+
+        public void setAdvice(String advice) {
+                this.advice = advice;
+        }
 }

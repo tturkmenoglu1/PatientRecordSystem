@@ -4,7 +4,6 @@ import com.patientrecord.domain.ImageFile;
 import com.patientrecord.domain.Patient;
 import com.patientrecord.dto.PatientDTO;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.util.HashSet;

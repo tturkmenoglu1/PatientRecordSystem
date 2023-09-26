@@ -50,7 +50,7 @@ public class AppointmentController {
         return ResponseEntity.ok(appointmentDTO);
     }
 
-    //******************** GET ALL PATIENT AS LIST **********************
+    //******************** GET ALL APPOINTMENTS AS LIST **********************
 
 
     @GetMapping("/all")
@@ -61,7 +61,7 @@ public class AppointmentController {
     }
 
 
-    //******************** GET ALL PATIENT AS PAGE **********************
+    //******************** GET ALL APPOINTMENTS AS PAGE **********************
     @GetMapping("/all/pg")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Page<AppointmentDTO>> getAllAppointmentsAsPage(@RequestParam("page") int page,

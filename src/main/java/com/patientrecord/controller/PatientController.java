@@ -53,7 +53,7 @@ public class PatientController {
 
     @GetMapping("/{id}")
     @PreAuthorize(("hasRole('ADMIN')"))
-    public ResponseEntity<PatientDTO> getPatientById(@RequestParam Long id){
+    public ResponseEntity<PatientDTO> getPatientById(@PathVariable Long id){
 
         PatientDTO patientDTO = patientService.findById(id);
 
@@ -63,9 +63,9 @@ public class PatientController {
 
     //******************** UPDATE PATIENT **********************
 
-    @PutMapping("/admin/auth")
+    @PutMapping("/{id}/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse> updatePatient(@RequestParam("id") Long id, @Valid @RequestBody PatienceRequest patienceRequest){
+    public ResponseEntity<PRResponse> updatePatient(@PathVariable("id") Long id, @Valid @RequestBody PatienceRequest patienceRequest){
 
         patientService.updatePatient(id,patienceRequest);
 
@@ -78,7 +78,7 @@ public class PatientController {
 
     @DeleteMapping("/admin/{id}/auth")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse> deletePatient(@RequestParam Long id){
+    public ResponseEntity<PRResponse> deletePatient(@PathVariable Long id){
         patientService.removeByID(id);
 
         PRResponse response = new PRResponse(ResponseMessage.PATIENT_DELETE_SUCCESS_MESSAGE, true);

@@ -9,6 +9,8 @@ import com.patientrecord.exception.message.ErrorMessage;
 import com.patientrecord.mapper.TransactionMapper;
 import com.patientrecord.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -46,5 +48,10 @@ public class TransactionService {
     public Transaction findTransactionById(Long id){
         return transactionRepository.findById(id).orElseThrow(()-> new
                 ResourceNotFoundException(String.format(ErrorMessage.TRANSACTION_NOT_FOUND_MESSAGE,id)));
+    }
+
+    public Page<TransactionDTO> findAllWitnPage(Pageable pageable) {
+        Page<Transaction> transactions = transactionRepository.findAll(pageable);
+        return transactions.map(transactionMapper::transactionToTransactionDTO);
     }
 }

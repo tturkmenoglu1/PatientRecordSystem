@@ -1,18 +1,15 @@
 package com.patientrecord.service;
 
 import com.patientrecord.domain.Gender;
-import com.patientrecord.domain.ImageFile;
 import com.patientrecord.domain.Nationality;
 import com.patientrecord.domain.Patient;
 import com.patientrecord.dto.PatientDTO;
 import com.patientrecord.dto.request.PatienceRequest;
-import com.patientrecord.exception.ConflictException;
 import com.patientrecord.exception.ResourceNotFoundException;
 import com.patientrecord.exception.message.ErrorMessage;
 import com.patientrecord.mapper.PatientMapper;
 import com.patientrecord.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

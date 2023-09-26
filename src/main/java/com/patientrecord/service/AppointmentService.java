@@ -3,9 +3,7 @@ package com.patientrecord.service;
 import com.patientrecord.domain.Appointment;
 import com.patientrecord.domain.Patient;
 import com.patientrecord.dto.AppointmentDTO;
-import com.patientrecord.dto.PatientDTO;
 import com.patientrecord.dto.request.AppointmentRequest;
-import com.patientrecord.dto.response.ResponseMessage;
 import com.patientrecord.exception.ResourceNotFoundException;
 import com.patientrecord.exception.message.ErrorMessage;
 import com.patientrecord.mapper.AppointmentMapper;
@@ -16,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.function.Function;
 
 @Service
 public class AppointmentService {
