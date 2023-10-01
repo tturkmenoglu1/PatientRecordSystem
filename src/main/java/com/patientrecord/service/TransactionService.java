@@ -42,7 +42,7 @@ public class TransactionService {
 
     public TransactionDTO getTransaction(Long id) {
         Transaction transaction = findTransactionById(id);
-        return transactionMapper.transactionToTransactionDTO(transaction);
+        return transactionMapper.domaingToDto(transaction);
     }
 
     public Transaction findTransactionById(Long id){
@@ -52,6 +52,6 @@ public class TransactionService {
 
     public Page<TransactionDTO> findAllWitnPage(Pageable pageable) {
         Page<Transaction> transactions = transactionRepository.findAll(pageable);
-        return transactions.map(transactionMapper::transactionToTransactionDTO);
+        return transactions.map(transactionMapper::domaingToDto);
     }
 }

@@ -7,5 +7,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface TransactionMapper {
 
-    TransactionDTO transactionToTransactionDTO(Transaction transaction);
+    TransactionDTO domaingToDto(Transaction transaction);
 }
