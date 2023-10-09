@@ -1,6 +1,8 @@
 package com.patientrecord.controller;
 
+import com.patientrecord.dto.StatisticsDTO;
 import com.patientrecord.dto.response.PRResponse;
+import com.patientrecord.dto.response.ResponseMessage;
 import com.patientrecord.service.DataBaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,9 @@ public class DataBaseController {
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PRResponse>
+    public ResponseEntity<StatisticsDTO> getCountOfAllRecords(){
+        StatisticsDTO statisticsDTO = dataBaseService.getCountOfAllRecords();
+        return ResponseEntity.ok(statisticsDTO);
+    }
 
 }

@@ -175,4 +175,8 @@ public class PatientService {
         return new PageImpl<>(patientDTOList,pageable,totalRecords);
 
     }
+
+    public long countPatientRecords() {
+        return patientRepository.count();
+    }
 }

@@ -13,6 +13,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransactionService {
 
@@ -53,5 +55,11 @@ public class TransactionService {
     public Page<TransactionDTO> findAllWitnPage(Pageable pageable) {
         Page<Transaction> transactions = transactionRepository.findAll(pageable);
         return transactions.map(transactionMapper::domaingToDto);
+    }
+
+    public long coundAccountBalance() {
+        List<Transaction> transactions = transactionRepository.findAll();
+        int sum = transactions.stream().mapToInt(Transaction::getReceivable).sum();
+        return sum;
     }
 }
